@@ -2,7 +2,7 @@
   "name": "particle-server",
   "version": "1.0.0",
   "description": "express server for particle webhooks",
-  "main": "./bin/www.js",
+  "main": "bin/www.js",
   "scripts": {
     "start:dev": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
