@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "atizqvjs",
+    "password": "yFmqiG9BqCCRaxNAppXeTu8bu_LSHmqF",
+    "database": "atizqvjs",
+    "host": "horton.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "atizqvjs",
+    "password": "yFmqiG9BqCCRaxNAppXeTu8bu_LSHmqF",
+    "database": "atizqvjs",
+    "host": "postgres://atizqvjs:yFmqiG9BqCCRaxNAppXeTu8bu_LSHmqF@horton.elephantsql.com:5432/atizqvjs",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "atizqvjs",
+    "password": "yFmqiG9BqCCRaxNAppXeTu8bu_LSHmqF",
+    "database": "atizqvjs",
+    "host": "postgres://atizqvjs:yFmqiG9BqCCRaxNAppXeTu8bu_LSHmqF@horton.elephantsql.com:5432/atizqvjs",
+    "dialect": "postgres"
+  }
+}
