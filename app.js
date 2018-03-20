@@ -4,7 +4,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 
-const todoController = require('./server/controllers/todo');
 const photoresistorController = require('./server/controllers/photoresistor');
 const app = express();
 
@@ -23,6 +22,8 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.get('/home', (req, res) => {
 
     res.render('index', {
@@ -30,9 +31,11 @@ app.get('/home', (req, res) => {
     });
 });
 
-app.get('/test', todoController.list);
+app.get('/test', photoresistorController.list);
 
-app.post('/todo', todoController.create);
+app.get('/data', photoresistorController.getData);
+
+//app.post('/todo', todoController.create);
 
 app.post('/photoresistor', photoresistorController.create);
 

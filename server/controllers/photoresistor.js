@@ -1,4 +1,5 @@
 const Todo = require('../models').Todo;
+const moment = require('moment');
 
 module.exports = {
     create(req, res) {
@@ -12,13 +13,50 @@ module.exports = {
 
     list(req, res) {
         return Todo
-            .all()
+            .findAll({
+                order: [
+                    ['createdAt', 'DESC']
+                ],
+                limit: 1000
+            })
             .then(todos => {
-               
+
+                todos = todos.map(t => {
+
+                    return {
+                        id: t.id,
+                        createdAt: moment(t.createdAt).format('HH:mm:ss'),
+                        title: t.title
+                    };
+                });
+
                 res.render('testlist', {
                     title: 'Coolywoolie!',
                     todos
                 });
+            })
+            .catch(error => res.status(400).send(error));
+    },
+    getData(req, res) {
+        return Todo
+            .findAll({
+                order: [
+                    ['createdAt', 'DESC']
+                ],
+                limit: 100
+            })
+            .then(todos => {
+
+                todos = todos.map(t => {
+
+                    return {
+                        id: t.id,
+                        createdAt: moment(t.createdAt).format('HH:mm:ss'),
+                        title: t.title
+                    };
+                });
+
+                res.status(200).json(todos);
             })
             .catch(error => res.status(400).send(error));
     },

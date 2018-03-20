@@ -1,14 +1,19 @@
 <h1>{{ title }}</h1>
-
 <p>Welcome to {{ title}} </p>
 
-
-{{#each todos}}
-
-
-<div>
+<div class="data-wrapper">
+  {{#each todos}}
+  <div>
     <code>
-
-  {{ this.id}}   {{this.title}}
+      {{this.id}}: {{this.title}}  ({{this.createdAt}})
     </code>
-</div> {{/each}}
+  </div>
+  {{/each}}
+</div>
+
+
+<div class="bars">
+  {{#each todos}}
+  <i class="bar" style="height:{{this.title}}px"></i>
+  {{/each}}
+</div>
