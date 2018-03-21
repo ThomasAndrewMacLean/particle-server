@@ -25,14 +25,17 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/home', (req, res) => {
+app.get('/ping', (req, res) => {
+    res.status(200).json({
+        alive: true
+    });
+});
 
+app.get('/home', (req, res) => {
     res.render('index', {
         title: 'Coolywoolie!'
     });
 });
-
-app.get('/test', photoresistorController.list);
 
 app.get('/licht', photoresistorController.getData);
 app.get('/temp', tempController.getData);
@@ -40,9 +43,13 @@ app.get('/temp', tempController.getData);
 app.post('/photoresistor', photoresistorController.create);
 app.post('/temp', tempController.create);
 
-app.get('*', (req, res) => res.status(200).send({
-    message: 'Welcome'
-}));
+
+app.get('*', (req, res) => {
+
+    res.render('index', {
+        title: 'iot'
+    });
+});
 
 
 
