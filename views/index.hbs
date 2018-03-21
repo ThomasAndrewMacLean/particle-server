@@ -1,3 +1,30 @@
 <h1>{{ title }}</h1>
-
 <p>Welcome to {{ title}} </p>
+
+<div class="data-wrapper">
+    {{#each todos}}
+    <div>
+        <code>
+      {{this.id}}: {{this.title}}  ({{this.createdAt}})
+    </code>
+    </div>
+    {{/each}}
+</div>
+
+<br> Licht
+<br>
+<div class="bars">
+    {{#each todos}}
+    <i class="bar" style="height:{{this.title}}px"></i>
+    {{/each}}
+</div>
+
+<br>
+<br> Temperatuur
+<br>
+
+<div class="bars">
+    {{#each temps}}
+    <i class="bar temp" style="height:{{this.title}}px"></i>
+    {{/each}}
+</div>

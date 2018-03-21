@@ -6,6 +6,7 @@ const hbs = require('express-handlebars');
 
 const photoresistorController = require('./server/controllers/photoresistor');
 const tempController = require('./server/controllers/tempController');
+const homeController = require('./server/controllers/homeController');
 const app = express();
 
 app.engine('hbs', hbs({
@@ -31,12 +32,6 @@ app.get('/ping', (req, res) => {
     });
 });
 
-app.get('/home', (req, res) => {
-    res.render('index', {
-        title: 'Coolywoolie!'
-    });
-});
-
 app.get('/licht', photoresistorController.getData);
 app.get('/temp', tempController.getData);
 
@@ -44,12 +39,7 @@ app.post('/photoresistor', photoresistorController.create);
 app.post('/temp', tempController.create);
 
 
-app.get('*', (req, res) => {
-
-    res.render('index', {
-        title: 'iot'
-    });
-});
+app.get('*', homeController.list);
 
 
 

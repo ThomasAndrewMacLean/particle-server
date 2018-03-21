@@ -7,7 +7,12 @@
 
 .bar {
     width: 1vw;
+    margin-left: 1px;
     background: yellowgreen;
+}
+
+.temp {
+    background: tomato;
 }
 
 .data-wrapper {
