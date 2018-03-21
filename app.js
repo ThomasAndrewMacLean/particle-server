@@ -38,6 +38,7 @@ app.get('/data', photoresistorController.getData);
 //app.post('/todo', todoController.create);
 
 app.post('/photoresistor', photoresistorController.create);
+app.post('/temp', tempController.create);
 
 app.get('*', (req, res) => res.status(200).send({
     message: 'Welcome'
