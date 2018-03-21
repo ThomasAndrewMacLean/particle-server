@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 
 const photoresistorController = require('./server/controllers/photoresistor');
+const tempController = require('./server/controllers/tempController');
 const app = express();
 
 app.engine('hbs', hbs({
