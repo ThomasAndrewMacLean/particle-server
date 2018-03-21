@@ -34,9 +34,8 @@ app.get('/home', (req, res) => {
 
 app.get('/test', photoresistorController.list);
 
-app.get('/data', photoresistorController.getData);
-
-//app.post('/todo', todoController.create);
+app.get('/licht', photoresistorController.getData);
+app.get('/temp', tempController.getData);
 
 app.post('/photoresistor', photoresistorController.create);
 app.post('/temp', tempController.create);
