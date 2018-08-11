@@ -46,7 +46,7 @@ module.exports = {
 
                 console.log('temps: ' + temps.length);
                 res.render('index', {
-                    title: 'Coolywoolie!',
+                    title: 'Particle-data-collector 2000!',
                     todos,
                     temps
                 });
